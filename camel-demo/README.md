@@ -10,14 +10,16 @@ Running the Sample
 
 Build the project using Maven:
 
-<code>mvn install</code>
+<pre>
+mvn install
+</pre>
 
-After a successful build the artifact target/camel-demo-*.jar can be copied to 
-the deploy directory in ServiceMix.
+After a successful build the artifact `target/camel-demo-*.jar` can be copied to 
+the `deploy` directory in ServiceMix.
 
 Before the deployment you may want to modify the default endpoints (using ftp 
-and http). You can do that by adding a file fi.codecenter.examples.camel.cfg to 
-the etc directory in ServiceMix with, for example, the following contents:
+and http). You can do that by adding a file `fi.codecenter.examples.camel.cfg` to 
+the `etc` directory in ServiceMix with, for example, the following contents:
 
 <pre>
 InvoiceImport.from.uri=file:/tmp/camel-demo/in
