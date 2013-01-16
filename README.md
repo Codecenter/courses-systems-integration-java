@@ -11,7 +11,7 @@ Adding the Samples to Eclipse
 To add the GitHub repository to your Eclipse IDE, use the following instructions:
 
 * Move to the Git Repository Exploring perspective (Window > Open Perspective > Other > Git Repository Exploring)
-* Copy the following URL to your clipboard: git://github.com/Codecenter/courses-systems-integration-java.git
+* Copy the following URL to your clipboard: <git://github.com/Codecenter/courses-systems-integration-java.git>
 * Right-click on the Git Repositories view and select Paste Repository Path or URI
 * A dialog opens where URL, Host, Repository path and Protocol are already set. Click Next, Next and Finish.
 * Right-click the project courses-systems-integration-java and select Import.
