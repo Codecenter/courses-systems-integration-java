@@ -17,7 +17,7 @@ on the project.
 
 After Tomcat has started you can access the web service at:
 
-[http://localhost:8080/jax-ws-demo-war-cxf/ws/HelloService]
+<http://localhost:8080/jax-ws-demo-war-cxf/ws/HelloService>
 
 This project does not include a client. Instead you can use the client in
 projects jax-ws-demo-client-cxf and jax-ws-demo-client-spring. Make sure the

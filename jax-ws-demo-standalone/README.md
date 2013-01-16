@@ -16,7 +16,7 @@ The project has two classes with the main method:
 
 The `HelloServiceServer` starts the web service at:
 
-[http://localhost:9999/ws/hello]
+<http://localhost:9999/ws/hello>
 
 The `HelloServiceClient` looks for the web service at the same address.
 
