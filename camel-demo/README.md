@@ -4,6 +4,9 @@ Sample Camel OSGi Bundle
 Description
 -----------
 
+In this sample Apache Camel is used as an OSGi bundle within an OSGi container, for example Apache ServiceMix. 
+
+The sample fetches files from one source, transforms them using XSLT, wraps them inside a SOAP header (again using XSLT) and finally sends them to, for example, a web service.
 
 Running the Sample
 ------------------
