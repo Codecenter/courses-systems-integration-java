@@ -22,7 +22,7 @@ Running the Sample
 ------------------
 
 The project is packaged as a WAR. You can start the web application directly
-using Maven with the command `mvn tomcat7:run`. It will launch Tomcat directly
+using Maven with the command `mvn tomcat:run`. It will launch Tomcat directly
 on the project.
 
 After Tomcat has started you can access the web service at:
