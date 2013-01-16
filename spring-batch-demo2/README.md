@@ -25,7 +25,7 @@ way to run the job is to run it inside Eclipse.
 Use the following command-line parameters when running the job:
 
 <pre>
-<springContextURL> <jobName> geoIpFileSpec=<fileSpecURL>
+&lt;springContextURL&gt; &lt;jobName&gt; geoIpFileSpec=&lt;fileSpecURL&gt;
 
 classpath:commandLineJobContext.xml geoIPJob geoIpFileSpec=file:src/test/resources/jobs/geoip/*.csv
 </pre>
@@ -41,7 +41,7 @@ java -jar target/spring-batch-demo-executable.jar
 Use the same parameters as you would when running inside Eclipse.
 
 If you want to re-run the demo, you'll need to provide additional parameters
-for the job, eg. run.id=1 with the number incrementing on each run.
+for the job, eg. `run.id=1` with the number incrementing on each run.
 
 You'll need to have PostgreSQL properly set-up for both the demo and 
 Spring before running the job. The SQL scripts for the demo can be found
