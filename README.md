@@ -5,6 +5,14 @@ Demos for the course Systems Integration Using Java Technologies.
 
 Interested in the course? E-mail info@codecenter.fi.
 
+Sample Requirements
+-------------------
+
+All the samples use Apache Maven. In addition the instructions 
+presume you're using Eclipse with the m2e plug-in installed. 
+You can, however, use any IDE you want as long as it supports
+Maven.
+
 Adding the Samples to Eclipse
 -----------------------------
 
