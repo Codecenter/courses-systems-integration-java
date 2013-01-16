@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+		xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+		xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		xmlns:tns="http://codecenter.fi/examples/ws" 
+		targetNamespace="http://codecenter.fi/examples/ws">
+    <wsdl:types>
+        <xsd:schema xmlns="http://codecenter.fi/examples/ws" 
+        		xmlns:tns="http://codecenter.fi/examples/ws" 
+        		targetNamespace="http://codecenter.fi/examples/ws">
+   			<xsd:element name="sayHelloRequest" type="xsd:string" />
+        	<xsd:element name="sayHelloResponse" type="xsd:string" />
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="sayHelloRequest">
+        <wsdl:part name="name" element="tns:sayHelloRequest" />
+    </wsdl:message>
+    <wsdl:message name="sayHelloResponse">
+        <wsdl:part name="result" element="tns:sayHelloResponse" />
+    </wsdl:message>
+    <wsdl:portType name="HelloService">
+        <wsdl:operation name="sayHello">
+            <wsdl:input message="tns:sayHelloRequest" />
+            <wsdl:output message="tns:sayHelloResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HelloServiceSoapBinding" type="tns:HelloService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <wsdl:operation name="sayHello">
+            <wsdl:documentation>Returns a customized greeting.</wsdl:documentation>
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HelloServiceSoap12Binding" type="tns:HelloService">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <wsdl:operation name="sayHello">
+            <wsdl:documentation>Returns a customized greeting.</wsdl:documentation>
+            <soap12:operation soapAction="" />
+            <wsdl:input>
+                <soap12:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HelloService">
+        <wsdl:port name="HelloServiceSoap" binding="tns:HelloServiceSoapBinding">
+            <soap:address location="http://localhost:8080/hello/ws/HelloService" />
+        </wsdl:port>
+        <wsdl:port name="HelloServiceSoap12" binding="tns:HelloServiceSoap12Binding">
+            <soap12:address location="http://localhost:8080/hello/ws/soap12/HelloService" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

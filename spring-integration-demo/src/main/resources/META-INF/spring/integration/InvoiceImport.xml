@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/integration"
+	xmlns:si-file="http://www.springframework.org/schema/integration/file"
+	xmlns:si-xml="http://www.springframework.org/schema/integration/xml"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/util
+			http://www.springframework.org/schema/util/spring-util.xsd
+			http://www.springframework.org/schema/integration
+			http://www.springframework.org/schema/integration/spring-integration.xsd
+			http://www.springframework.org/schema/integration/file
+			http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+			http://www.springframework.org/schema/integration/xml
+			http://www.springframework.org/schema/integration/xml/spring-integration-xml.xsd">
+
+	<util:properties id="defaultProperties">
+		<beans:prop key="InvoiceImport.directory.in">target/in</beans:prop>
+		<beans:prop key="InvoiceImport.directory.out">target/out</beans:prop>
+	</util:properties>
+			
+	<context:property-placeholder 
+			location="classpath:/InvoiceImport.properties"
+			ignore-resource-not-found="true" 
+			properties-ref="defaultProperties" />
+			
+	<channel id="input" />
+	<channel id="output" />
+
+	<!-- File poller -->
+
+	<si-file:inbound-channel-adapter channel="input" 
+			directory="file:${InvoiceImport.directory.in}"
+			filename-pattern="Order*.xml" 
+			auto-create-directory="true" prevent-duplicates="false">
+		<poller cron="*/5 * * * * *" max-messages-per-poll="99" />
+	</si-file:inbound-channel-adapter>
+
+	<!-- Processing pipeline -->
+
+	<chain input-channel="input" output-channel="output">
+		<!-- Transform to String -->
+		<si-file:file-to-string-transformer delete-files="true" />
+		
+		<!-- Filter unwanted using XPath -->
+		<si-xml:xpath-filter>
+			<si-xml:xpath-expression expression="count(//Product) > 0" />
+		</si-xml:xpath-filter> 
+		
+		<!-- XSL Transformation -->
+		<si-xml:xslt-transformer xsl-resource="classpath:in/Order2Invoice.xsl"
+			result-transformer="resultTransformer" />
+	</chain>
+
+	<!-- File writer -->
+	
+	<si-file:outbound-channel-adapter
+		channel="output" directory="file:${InvoiceImport.directory.out}"
+		delete-source-files="true" />
+
+	<!-- Transforms Result to String -->
+
+	<beans:bean id="resultTransformer"
+		class="org.springframework.integration.xml.transformer.ResultToStringTransformer" />
+</beans:beans>

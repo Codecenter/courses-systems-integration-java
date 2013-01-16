@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/batch"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+          http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+    <job id="simpleJob">
+        <step id="simpleJobStep">
+            <tasklet>
+                <chunk reader="monthReader" 
+                    	processor="translateToUpperCaseProcessor" 
+                    	writer="sysoutWriter" commit-interval="3" />
+            </tasklet>
+        </step>
+    </job>
+
+    <!-- Reads a list of Strings -->
+    <beans:bean id="monthReader" class="org.springframework.batch.item.support.ListItemReader" scope="step">
+        <beans:constructor-arg>
+            <beans:list>
+                <beans:value>January</beans:value>
+                <beans:value>February</beans:value>
+                <beans:value>March</beans:value>
+                <beans:value>April</beans:value>
+                <beans:value>May</beans:value>
+                <beans:value>June</beans:value>
+                <beans:value>July</beans:value>
+                <beans:value>August</beans:value>
+                <beans:value>September</beans:value>
+                <beans:value>October</beans:value>
+                <beans:value>November</beans:value>
+                <beans:value>December</beans:value>
+            </beans:list>
+        </beans:constructor-arg>
+    </beans:bean>
+
+    <!-- Translates Strings to UPPERCASE -->
+    <beans:bean id="translateToUpperCaseProcessor" class="jobs.simple.TranslateToUpperCaseProcessor" />
+
+    <!-- Prints to stdout -->
+    <beans:bean id="sysoutWriter" class="jobs.simple.SysoutItemWriter" />
+
+</beans:beans>

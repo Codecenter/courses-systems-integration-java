@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" >
+
+    <endpoint
+        name="HelloService"
+        implementation="fi.codecenter.examples.HelloServiceImpl"
+        interface="fi.codecenter.examples.HelloService"
+        port="{http://codecenter.fi/examples/ws}HelloServiceSoap"
+        service="{http://codecenter.fi/examples/ws}HelloService"
+        url-pattern="/ws/HelloService"
+        wsdl="WEB-INF/wsdl/HelloService.wsdl" />
+
+    <endpoint
+        name="HelloService"
+        implementation="fi.codecenter.examples.HelloServiceImpl"
+        interface="fi.codecenter.examples.HelloService"
+        port="{http://codecenter.fi/examples/ws}HelloServiceSoap12"
+        binding="http://java.sun.com/xml/ns/jaxws/2003/05/soap/bindings/HTTP/"
+        service="{http://codecenter.fi/examples/ws}HelloService"
+        url-pattern="/ws/HelloService12"
+        wsdl="WEB-INF/wsdl/HelloService.wsdl" />
+    
+</endpoints>

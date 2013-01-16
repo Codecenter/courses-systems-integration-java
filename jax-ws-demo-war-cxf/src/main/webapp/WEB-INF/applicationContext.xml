@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xmlns="http://www.springframework.org/schema/beans"
+	    xmlns:jaxws="http://cxf.apache.org/jaxws"
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	    					http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+    <bean id="helloService" class="fi.codecenter.examples.HelloServiceImpl" />
+
+	<jaxws:endpoint 
+	    	id="helloServiceEndpoint"
+		    implementor="#helloService"
+		    serviceName="ws:HelloService"
+		    endpointName="ws:HelloServiceSoap"
+		    address="/HelloService"
+		    wsdlLocation="classpath:/HelloService.wsdl"
+		    xmlns:ws="http://codecenter.fi/examples/ws" />
+
+	<jaxws:endpoint 
+	    	id="helloServiceEndpoint12"
+		    implementor="#helloService"
+		    serviceName="ws:HelloService"
+		    endpointName="ws:HelloServiceSoap12"
+		    address="/HelloService12"
+		    wsdlLocation="classpath:/HelloService.wsdl"
+		    xmlns:ws="http://codecenter.fi/examples/ws" />
+</beans>
