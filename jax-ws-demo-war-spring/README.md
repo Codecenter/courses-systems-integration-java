@@ -12,7 +12,7 @@ Running the Sample
 
 After starting Tomcat using `mvn tomcat:run` you can access the web service at:
 
-http://localhost:8080/jax-ws-demo-war-spring/ws/HelloService
+[http://localhost:8080/jax-ws-demo-war-spring/ws/HelloService]
 
 This project does not include a client. Instead you can use the client in
 projects jax-ws-demo-client-cxf and jax-ws-demo-client-spring. Make sure the
