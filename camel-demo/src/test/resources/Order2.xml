@@ -1,0 +1,8 @@
+<Order number="2">
+    <Customer>
+        <Name>Customer 2</Name>
+    </Customer>
+    <Products>
+        <Product article="555" title="Product 555" quantity="7.0" unitPrice="90" />
+    </Products>
+</Order>

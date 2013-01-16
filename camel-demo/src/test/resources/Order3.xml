@@ -1,0 +1,6 @@
+<Order number="3">
+    <Customer>
+        <Name>Customer 1</Name>
+    </Customer>
+    <Products />
+</Order>

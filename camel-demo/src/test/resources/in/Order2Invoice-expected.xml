@@ -1,0 +1,33 @@
+<Invoice>
+    <Recipient>
+        <Name>Customer 1</Name>
+    </Recipient>
+    <InvoiceLine>
+        <ArticleCode>111</ArticleCode>
+        <Message>Product 111</Message>
+        <Quantity>1.0</Quantity>
+		<UnitPrice unit="pcs">10</UnitPrice>
+		<TotalPrice>10</TotalPrice>
+	</InvoiceLine>
+    <InvoiceLine>
+        <ArticleCode>222</ArticleCode>
+        <Message>Product 222</Message>
+        <Quantity>2.0</Quantity>
+		<UnitPrice unit="pcs">20</UnitPrice>
+		<TotalPrice>40</TotalPrice>
+	</InvoiceLine>
+    <InvoiceLine>
+        <ArticleCode>333</ArticleCode>
+        <Message>Product 333</Message>
+        <Quantity>3.0</Quantity>
+		<UnitPrice unit="pcs">30</UnitPrice>
+		<TotalPrice>90</TotalPrice>
+	</InvoiceLine>
+    <InvoiceLine>
+        <ArticleCode>444</ArticleCode>
+        <Message>Product 444</Message>
+        <Quantity>4.0</Quantity>
+		<UnitPrice unit="pcs">40</UnitPrice>
+		<TotalPrice>160</TotalPrice>
+	</InvoiceLine>
+</Invoice>

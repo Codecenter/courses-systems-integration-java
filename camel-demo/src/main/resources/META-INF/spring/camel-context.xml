@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+	xmlns:ctx="http://www.springframework.org/schema/context" xmlns:awh="http://abakus.fi/ws/warehouse/api/2.0"
+	xmlns:p="http://optiscangroup.com/schemas/integration/parsers/xml/2.0"
+	xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring
+         http://camel.apache.org/schema/spring/camel-spring.xsd
+         http://www.springframework.org/schema/osgi-compendium 
+         http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+         http://www.springframework.org/schema/context 
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Configuration -->
+	<osgix:cm-properties id="cmProperties" persistent-id="fi.codecenter.examples.camel">
+        <!-- The following properties can be overridden in ServiceMix 
+             by setting them in file etc/camel-demo.properties 
+             (the file name is based on the persistent-id). -->
+		<prop key="InvoiceImport.from.uri">ftp://username@localhost/orders/in?password=secret</prop>
+		<prop key="InvoiceImport.to.uri">http://localhost/ws/invoices/import</prop>	    
+	</osgix:cm-properties>
+	<ctx:property-placeholder properties-ref="cmProperties" />
+
+	<!-- Routes -->
+	<camelContext trace="false" xmlns="http://camel.apache.org/schema/spring">
+		<propertyPlaceholder id="properties" location="ref:cmProperties" />
+
+		<route id="InvoiceImport">
+		    <!-- Accept/Fetch data from URI -->
+			<from uri="{{InvoiceImport.from.uri}}" />
+			
+			<!-- Filter unwanted input by XPath -->
+			<filter>
+			    <!-- Skip orders without products -->
+			    <xpath>count(//Product) > 0</xpath>
+			    
+				<!-- Perform XSLT transformation -->
+				<to uri="xslt:/in/Order2Invoice.xsl" />
+				
+				<!-- Perform XSLT transformation -->
+				<to uri="xslt:/soapWrapper.xsl" />
+				
+				<!-- Set header for the next operation -->
+				<setHeader headerName="Content-Type">
+					<constant>text/xml;charset=utf-8</constant>
+				</setHeader>
+				
+				<!-- Send data to the final URI -->
+				<to uri="{{InvoiceImport.to.uri}}" />
+			</filter>			
+		</route>
+	</camelContext>
+</beans>    
