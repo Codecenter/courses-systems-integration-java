@@ -4,8 +4,8 @@ Sample Usage of JAX-WS
 Description
 -----------
 This project contains a web service developed using the contract-last model.
-Java implementation is written first and then used to generate the WSDL at 
-runtime.
+Java implementation is written first and then used to generate and publish
+the WSDL at runtime.
 
 Running the Sample
 ------------------
