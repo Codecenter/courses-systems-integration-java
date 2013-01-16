@@ -20,7 +20,7 @@ Use Maven to launch Tomcat directly from the project:
 mvn tomcat:run
 </pre>
 
-The `HelloService` can be found at:
+The `fi.codecenter.examples.HelloService` can be found at:
 
 <http://localhost:8080/spring-web-mvc-demo-war/rest/hello>
 
