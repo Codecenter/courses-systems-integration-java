@@ -1,5 +1,5 @@
-Sample Usage of JAX-WS
-======================
+Sample Usage of JAX-WS in a Web Application
+===========================================
 
 Description
 -----------
