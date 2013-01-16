@@ -1,11 +1,11 @@
-Using Apache CXF as the JAX-WS Provider
-=======================================
+Using Apache CXF as the JAX-WS Client
+=====================================
 
 Description
 -----------
 
 This project provides a client application for the previous jax-ws-demo-war 
-example. It uses Apache CXF as the JAX-WS implementation. 
+example. It uses Apache CXF as the JAX-WS implementation for the client. 
 
 In addition Spring is used to initialize the application. It is possible to 
 use Apache CXF directly without using Spring for the initialization.
