@@ -27,7 +27,7 @@ on the project.
 
 After Tomcat has started you can access the web service at:
 
-[http://localhost:8080/jax-ws-demo-war/HelloService]
+(http://localhost:8080/jax-ws-demo-war/HelloService)
 
 You can use the class `fi.codecenter.examples.client.HelloServiceClient`
 with a `main` method to access the service.
