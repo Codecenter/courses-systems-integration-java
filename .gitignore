@@ -1,1 +1,6 @@
 target/
+.*
+*.log
+*.bak
+*.tmp
+*.swp
