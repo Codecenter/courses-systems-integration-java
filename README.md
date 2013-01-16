@@ -4,3 +4,18 @@ Systems Integration Using Java Technologies
 Demos for the course Systems Integration Using Java Technologies.
 
 Interested in the course? E-mail info@codecenter.fi.
+
+Adding the Samples to Eclipse
+-----------------------------
+
+To add the GitHub repository to your Eclipse IDE, use the following instructions:
+
+* Move to the Git Repository Exploring perspective (Window > Open Perspective > Other > Git Repository Exploring)
+* Copy the following URL to your clipboard: git://github.com/Codecenter/courses-systems-integration-java.git
+* Right-click on the Git Repositories view and select Paste Repository Path or URI
+* A dialog opens where URL, Host, Repository path and Protocol are already set. Click Next, Next and Finish.
+* Right-click the project courses-systems-integration-java and select Import.
+* Under Maven, select Existing Maven Projects and click Next.  
+* Use Select All to check all projects and perform the import by clicking Finish.
+
+After a while you have all the sample projects available inside Eclipse.
