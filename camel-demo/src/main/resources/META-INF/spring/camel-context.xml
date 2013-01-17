@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
-	xmlns:ctx="http://www.springframework.org/schema/context" xmlns:awh="http://abakus.fi/ws/warehouse/api/2.0"
-	xmlns:p="http://optiscangroup.com/schemas/integration/parsers/xml/2.0"
+	xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+	xmlns:ctx="http://www.springframework.org/schema/context" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="
          http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -21,7 +21,8 @@
 		<prop key="InvoiceImport.from.uri">ftp://username@localhost/orders/in?password=secret</prop>
 		<prop key="InvoiceImport.to.uri">http://localhost/ws/invoices/import</prop>	    
 	</osgix:cm-properties>
-	<ctx:property-placeholder properties-ref="cmProperties" />
+
+	<ctx:property-placeholder properties-ref="cmProperties" />     
 
 	<!-- Routes -->
 	<camelContext trace="false" xmlns="http://camel.apache.org/schema/spring">
