@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:ctx="http://www.springframework.org/schema/context" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring
+         http://camel.apache.org/schema/spring/camel-spring.xsd
+         http://www.springframework.org/schema/context 
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="jms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <!-- This is not the default port, make sure your ActiveMQ runs in this port. -->
+        <property name="brokerURL" value="tcp://localhost:61610"/>
+    </bean>
+    
+	<camelContext xmlns="http://camel.apache.org/schema/spring">
+		<route>
+			<from uri="file:camel/activemq/in" />
+			<to uri="jms:queue:camel-activemq-demo" />
+		</route>
+		
+		<route>
+			<from uri="jms:queue:camel-activemq-demo" />
+			<to uri="file:camel/activemq/out" />
+		</route>
+	</camelContext>
+</beans>    
