@@ -26,4 +26,4 @@ To add the GitHub repository to your Eclipse IDE, use the following instructions
 * Under Maven, select Existing Maven Projects and click Next.  
 * Use Select All to check all projects and perform the import by clicking Finish.
 
-After a while you have all the sample projects available inside Eclipse.
+After a while you should have all the sample projects available inside Eclipse.
