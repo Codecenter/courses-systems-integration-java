@@ -1,5 +1,6 @@
 Sample Usage of JAX-RS
 ======================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
