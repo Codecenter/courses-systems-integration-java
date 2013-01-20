@@ -1,5 +1,6 @@
 Sample Usage of JAX-RS Inside a Web Application
 ===============================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
