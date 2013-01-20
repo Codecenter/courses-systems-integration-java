@@ -1,5 +1,6 @@
 Using Apache Camel with ActiveMQ
 ================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
