@@ -1,5 +1,6 @@
 Sample Usage of Apache Camel Test Kit
 =====================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
