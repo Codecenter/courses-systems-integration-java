@@ -1,5 +1,6 @@
 Using Apache CXF as the JAX-WS Provider
 =======================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
