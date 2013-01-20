@@ -1,5 +1,6 @@
 Sample Usage of JAX-WS in a Web Application
 ===========================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
