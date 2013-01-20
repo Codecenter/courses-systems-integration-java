@@ -1,5 +1,6 @@
 Simple Spring Integration Demo
 ==============================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
