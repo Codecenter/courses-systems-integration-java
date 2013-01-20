@@ -1,4 +1,4 @@
-package fi.codecenter.examples;
+package fi.codecenter.examples.client;
 
 public interface HelloService {
 	String sayHello();

@@ -5,10 +5,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 @Path("/hello")
-public class HelloServiceImpl implements HelloService {
+public class HelloServiceImpl {
 	@GET
 	@Produces("text/plain; charset=UTF-8")
 	public String sayHello() {
+		System.out.println("The server responds hello!");
 		return "Hello!";
 	}
 }

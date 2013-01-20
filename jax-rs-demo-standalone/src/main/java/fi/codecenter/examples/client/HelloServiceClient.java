@@ -7,7 +7,6 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
-import fi.codecenter.examples.HelloService;
 
 public class HelloServiceClient {
 	public static void main(String[] args) throws Exception {
