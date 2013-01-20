@@ -1,5 +1,6 @@
 Using Smooks with Apache Camel
 ==============================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
