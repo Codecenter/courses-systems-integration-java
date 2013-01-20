@@ -9,7 +9,7 @@ Sample Requirements
 -------------------
 
 All the samples use [Apache Maven](http://maven.apache.org). In addition the instructions 
-presume you're using [Eclipse for Java (EE) Developers](http://www.eclipse.org) with the [m2e](http://www.eclipse.org/m2e) plug-in installed. 
+presume you're using [Eclipse for Java Developers](http://www.eclipse.org) which has the [m2e](http://www.eclipse.org/m2e) plug-in installed by default. 
 You can, however, use any IDE you want as long as it supports
 Maven.
 
