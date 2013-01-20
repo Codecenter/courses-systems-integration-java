@@ -1,5 +1,6 @@
 Using Spring to Initialize the Web Service
 ==========================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
