@@ -1,5 +1,6 @@
 Using Spring Web MVC to Publish a RESTful API
 =============================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
