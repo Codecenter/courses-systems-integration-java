@@ -1,7 +1,7 @@
 Systems Integration Using Java Technologies
 ===========================================
 
-Demos for the course Systems Integration Using Java Technologies.
+Demos for the course Systems Integration Using Java Technologies. Copyright to all material unless otherwise stated belongs to [Codecenter Oy](http://www.codecenter.fi).
 
 Interested in the course? E-mail info@codecenter.fi.
 
