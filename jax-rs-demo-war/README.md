@@ -19,7 +19,7 @@ Running the Sample
 Use Maven to launch Tomcat directly from the project:
 
 <pre>
-mvn tomcat:run
+mvn tomcat7:run
 </pre>
 
 The `HelloService` can be found at:
