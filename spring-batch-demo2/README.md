@@ -1,5 +1,6 @@
 Data Import Using Spring Batch
 ==============================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
