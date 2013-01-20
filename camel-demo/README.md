@@ -1,5 +1,6 @@
 Sample Camel OSGi Bundle
 ========================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
