@@ -1,5 +1,6 @@
 Simple Spring Batch Demo
 ========================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
