@@ -1,5 +1,6 @@
 Preparing the JAX-WS Client Using Spring
 ========================================
+Copyright @ Codecenter Oy. All rights reserved.
 
 Description
 -----------
